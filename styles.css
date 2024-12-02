@@ -1,0 +1,160 @@
+/* General Styling */
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in;
+}
+
+header p {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #47594A;
+    font-family: 'Laila', sans-serif;
+    font-weight: 800;
+    text-transform: lowercase;
+}
+
+/* Image Grid Layout */
+.image-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 15px;
+    padding: 20px;
+    justify-items: center; /* Centers the images in each grid cell */
+    margin: 20px auto;
+    max-width: 1200px; /* Adjust the max width of the grid */
+    animation: gridFadeIn 2s ease-in-out;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-item img:hover {
+    transform: scale(1.1); /* Hover effect to zoom in */
+}
+
+/* Content Section */
+.content {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    animation: slideUp 2s ease-out;
+}
+
+.content h2 {
+    font-size: 2rem;
+    color: #28782b;
+    margin-bottom: 15px;
+}
+
+.content p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Map Section */
+.map-section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #4A5845;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-style: italic;
+    animation: fadeIn 3s ease-in;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes gridFadeIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    font-family: 'Raleway', sans-serif;
+    align-self: center;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+.center-button {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    align-items: center; /* Aligns vertically, useful for more content */
+    margin: 20px 0; /* Adds spacing above and below */
+}

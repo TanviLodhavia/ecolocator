@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Carbon Footprint Calculator - EcoLocator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="footprint.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">EcoLocator</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="footprint.html">Carbon Footprint Calculator</a>
+        <a href="https://tanvilodhavia.wixsite.com/ecolens" target="_blank">Blog</a>
+        <a href="https://garbage-classifier-python.streamlit.app/" target="_blank">Waste Classifier</a>
+      </nav>
+    </header>
+
+    <section class="calculator-hero">
+      <div class="container">
+        <div class="calculator-hero-content" data-aos="fade-up">
+          <h1>Carbon Footprint Calculator</h1>
+          <p>
+            Measure your environmental impact and discover ways to reduce your
+            carbon footprint
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calculator-form-section">
+      <div class="container">
+        <div class="calculator-form-container" data-aos="fade-up">
+          <div class="form-progress">
+            <div class="progress-step active">1</div>
+            <div class="progress-line"></div>
+            <div class="progress-step">2</div>
+            <div class="progress-line"></div>
+            <div class="progress-step">3</div>
+            <div class="progress-line"></div>
+            <div class="progress-step">4</div>
+          </div>
+
+          <form id="carbon-calculator">
+            <div class="form-step active-step" id="step-1">
+              <h2>Transportation</h2>
+              <div class="form-group">
+                <label for="car-miles"
+                  >How many miles do you drive per week?</label
+                >
+                <input type="number" id="car-miles" min="0" step="1" />
+              </div>
+              <div class="form-group">
+                <label for="car-efficiency"
+                  >What is your car's fuel efficiency (MPG)?</label
+                >
+                <input type="number" id="car-efficiency" min="1" step="1" />
+              </div>
+              <div class="form-group">
+                <label for="public-transit"
+                  >How many miles do you travel by public transit per
+                  week?</label
+                >
+                <input type="number" id="public-transit" min="0" step="1" />
+              </div>
+              <div class="form-group">
+                <label for="flights"
+                  >How many flights do you take per year?</label
+                >
+                <input type="number" id="flights" min="0" step="1" />
+              </div>
+              <div class="form-navigation">
+                <button type="button" class="next-step">Next</button>
+              </div>
+            </div>
+
+            <div class="form-step" id="step-2">
+              <h2>Home Energy</h2>
+              <div class="form-group">
+                <label for="electricity"
+                  >What is your average monthly electricity bill ($)?</label
+                >
+                <input type="number" id="electricity" min="0" step="0.01" />
+              </div>
+              <div class="form-group">
+                <label for="natural-gas"
+                  >What is your average monthly natural gas bill ($)?</label
+                >
+                <input type="number" id="natural-gas" min="0" step="0.01" />
+              </div>
+              <div class="form-group">
+                <label for="home-size"
+                  >What is the size of your home (square feet)?</label
+                >
+                <input type="number" id="home-size" min="100" step="1" />
+              </div>
+              <div class="form-group">
+                <label for="occupants"
+                  >How many people live in your home?</label
+                >
+                <input type="number" id="occupants" min="1" step="1" />
+              </div>
+              <div class="form-navigation">
+                <button type="button" class="prev-step">Previous</button>
+                <button type="button" class="next-step">Next</button>
+              </div>
+            </div>
+
+            <div class="form-step" id="step-3">
+              <h2>Diet & Consumption</h2>
+              <div class="form-group">
+                <label for="diet"
+                  >What type of diet do you primarily follow?</label
+                >
+                <select id="diet">
+                  <option value="meat-heavy">
+                    Meat-heavy (daily meat consumption)
+                  </option>
+                  <option value="average">
+                    Average (meat a few times a week)
+                  </option>
+                  <option value="vegetarian">Vegetarian</option>
+                  <option value="vegan">Vegan</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="food-waste"
+                  >How much of your food do you estimate goes to waste?</label
+                >
+                <select id="food-waste">
+                  <option value="low">Less than 10%</option>
+                  <option value="medium">10-25%</option>
+                  <option value="high">More than 25%</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="shopping"
+                  >How much do you spend on non-essential goods per month
+                  ($)?</label
+                >
+                <input type="number" id="shopping" min="0" step="1" />
+              </div>
+              <div class="form-navigation">
+                <button type="button" class="prev-step">Previous</button>
+                <button type="button" class="next-step">Next</button>
+              </div>
+            </div>
+
+            <div class="form-step" id="step-4">
+              <h2>Review & Calculate</h2>
+              <div class="review-section">
+                <h3>Your Information:</h3>
+                <div id="review-data">
+                  <!-- Review data will be populated by JavaScript -->
+                </div>
+              </div>
+              <div class="form-navigation">
+                <button type="button" class="prev-step">Previous</button>
+                <button type="button" class="calculate-btn">
+                  Calculate My Footprint
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="calculator-results" id="results" style="display: none">
+          <div class="result-header">
+            <h2>Your Carbon Footprint</h2>
+            <div class="result-score">
+              <span id="result-number">0</span>
+              <span class="result-unit">tons CO2/year</span>
+            </div>
+            <div class="result-comparison">
+              <p id="result-comparison-text">
+                Compared to the average of 16 tons per person per year in the US
+              </p>
+            </div>
+          </div>
+
+          <div class="result-breakdown">
+            <h3>Breakdown by Category</h3>
+            <div class="breakdown-chart">
+              <div class="chart-item">
+                <div class="chart-label">Transportation</div>
+                <div class="chart-bar">
+                  <div
+                    class="chart-fill"
+                    id="transport-bar"
+                    style="width: 0%"
+                  ></div>
+                </div>
+                <div class="chart-value" id="transport-value">0 tons</div>
+              </div>
+              <div class="chart-item">
+                <div class="chart-label">Home Energy</div>
+                <div class="chart-bar">
+                  <div class="chart-fill" id="home-bar" style="width: 0%"></div>
+                </div>
+                <div class="chart-value" id="home-value">0 tons</div>
+              </div>
+              <div class="chart-item">
+                <div class="chart-label">Diet & Consumption</div>
+                <div class="chart-bar">
+                  <div class="chart-fill" id="diet-bar" style="width: 0%"></div>
+                </div>
+                <div class="chart-value" id="diet-value">0 tons</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-tips">
+            <h3>Tips to Reduce Your Carbon Footprint</h3>
+            <div class="tips-container" id="tips-container">
+              <!-- Tips will be populated by JavaScript -->
+            </div>
+          </div>
+
+          <div class="result-actions">
+            <button class="hero-button" id="recalculate-btn">
+              Recalculate
+            </button>
+            <button class="hero-button secondary" id="save-results-btn">
+              Save Results
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 EcoLocator. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 1000,
+      });
+    </script>
+
+    <script>
+      // Carbon Calculator JavaScript
+      document.addEventListener("DOMContentLoaded", function () {
+        // Form navigation
+        const nextButtons = document.querySelectorAll(".next-step");
+        const prevButtons = document.querySelectorAll(".prev-step");
+        const calculateBtn = document.querySelector(".calculate-btn");
+        const recalculateBtn = document.getElementById("recalculate-btn");
+        const formSteps = document.querySelectorAll(".form-step");
+        const progressSteps = document.querySelectorAll(".progress-step");
+
+        let currentStep = 0;
+
+        // Show current step
+        function showStep(step) {
+          formSteps.forEach((formStep, index) => {
+            formStep.classList.toggle("active-step", index === step);
+          });
+
+          progressSteps.forEach((progressStep, index) => {
+            progressStep.classList.toggle("active", index <= step);
+          });
+
+          currentStep = step;
+        }
+
+        // Next button click
+        nextButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            if (currentStep < formSteps.length - 1) {
+              currentStep++;
+              showStep(currentStep);
+            }
+          });
+        });
+
+        // Previous button click
+        prevButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            if (currentStep > 0) {
+              currentStep--;
+              showStep(currentStep);
+            }
+          });
+        });
+
+        // Calculate button click
+        calculateBtn.addEventListener("click", function () {
+          // Collect form data
+          const formData = {
+            carMiles:
+              parseFloat(document.getElementById("car-miles").value) || 0,
+            carEfficiency:
+              parseFloat(document.getElementById("car-efficiency").value) || 25,
+            publicTransit:
+              parseFloat(document.getElementById("public-transit").value) || 0,
+            flights: parseFloat(document.getElementById("flights").value) || 0,
+            electricity:
+              parseFloat(document.getElementById("electricity").value) || 0,
+            naturalGas:
+              parseFloat(document.getElementById("natural-gas").value) || 0,
+            homeSize:
+              parseFloat(document.getElementById("home-size").value) || 1500,
+            occupants:
+              parseFloat(document.getElementById("occupants").value) || 1,
+            diet: document.getElementById("diet").value,
+            foodWaste: document.getElementById("food-waste").value,
+            shopping:
+              parseFloat(document.getElementById("shopping").value) || 0,
+          };
+
+          // Calculate carbon footprint
+          const results = calculateCarbonFootprint(formData);
+
+          // Display results
+          displayResults(results, formData);
+
+          // Hide form and show results
+          document.querySelector(".calculator-form-container").style.display =
+            "none";
+          document.getElementById("results").style.display = "block";
+        });
+
+        // Recalculate button click
+        recalculateBtn.addEventListener("click", function () {
+          document.querySelector(".calculator-form-container").style.display =
+            "block";
+          document.getElementById("results").style.display = "none";
+          showStep(0);
+        });
+
+        // Calculate carbon footprint
+        function calculateCarbonFootprint(data) {
+          // Transportation (approximate calculations)
+          const carEmissions =
+            ((data.carMiles * 52) / data.carEfficiency) * 8.89; // kg CO2 per gallon
+          const publicTransitEmissions = data.publicTransit * 52 * 0.2; // kg CO2 per mile
+          const flightEmissions = data.flights * 900; // kg CO2 per flight (average)
+          const transportTotal =
+            (carEmissions + publicTransitEmissions + flightEmissions) / 1000; // convert to tons
+
+          // Home Energy (approximate calculations)
+          const electricityEmissions = data.electricity * 12 * 0.0007; // tons CO2 per dollar (average)
+          const naturalGasEmissions = data.naturalGas * 12 * 0.0053; // tons CO2 per dollar (average)
+          const homeTotal =
+            (electricityEmissions + naturalGasEmissions) / data.occupants;
+
+          // Diet & Consumption (approximate calculations)
+          let dietFactor = 1.5; // meat-heavy
+          if (data.diet === "average") dietFactor = 1.2;
+          if (data.diet === "vegetarian") dietFactor = 0.8;
+          if (data.diet === "vegan") dietFactor = 0.5;
+
+          let wasteFactor = 1.2; // high waste
+          if (data.foodWaste === "medium") wasteFactor = 1.1;
+          if (data.foodWaste === "low") wasteFactor = 1.0;
+
+          const dietEmissions = 2.5 * dietFactor * wasteFactor; // tons per year
+          const shoppingEmissions = data.shopping * 12 * 0.0005; // tons CO2 per dollar (average)
+          const dietTotal = dietEmissions + shoppingEmissions;
+
+          // Total
+          const total = transportTotal + homeTotal + dietTotal;
+
+          return {
+            total: total.toFixed(1),
+            transport: transportTotal.toFixed(1),
+            home: homeTotal.toFixed(1),
+            diet: dietTotal.toFixed(1),
+          };
+        }
+
+        // Display results
+        function displayResults(results, formData) {
+          // Display total
+          document.getElementById("result-number").textContent = results.total;
+
+          // Update comparison text
+          const comparison = parseFloat(results.total) < 16 ? "below" : "above";
+          document.getElementById(
+            "result-comparison-text"
+          ).textContent = `Compared to the average of 16 tons per person per year in the US, you are ${comparison} average`;
+
+          // Calculate percentages for chart
+          const total = parseFloat(results.total);
+          const transportPercent = (
+            (parseFloat(results.transport) / total) *
+            100
+          ).toFixed(0);
+          const homePercent = (
+            (parseFloat(results.home) / total) *
+            100
+          ).toFixed(0);
+          const dietPercent = (
+            (parseFloat(results.diet) / total) *
+            100
+          ).toFixed(0);
+
+          // Update chart
+          document.getElementById(
+            "transport-bar"
+          ).style.width = `${transportPercent}%`;
+          document.getElementById(
+            "transport-value"
+          ).textContent = `${results.transport} tons`;
+
+          document.getElementById("home-bar").style.width = `${homePercent}%`;
+          document.getElementById(
+            "home-value"
+          ).textContent = `${results.home} tons`;
+
+          document.getElementById("diet-bar").style.width = `${dietPercent}%`;
+          document.getElementById(
+            "diet-value"
+          ).textContent = `${results.diet} tons`;
+
+          // Generate tips based on results
+          generateTips(results, formData);
+        }
+
+        // Generate tips
+        function generateTips(results, formData) {
+          const tipsContainer = document.getElementById("tips-container");
+          tipsContainer.innerHTML = "";
+
+          const tips = [];
+
+          // Transportation tips
+          if (parseFloat(results.transport) > 3) {
+            tips.push({
+              category: "Transportation",
+              text: "Consider carpooling, using public transportation, or switching to an electric vehicle to reduce your transportation emissions.",
+            });
+          }
+
+          if (formData.carMiles > 100) {
+            tips.push({
+              category: "Transportation",
+              text: "Try to combine errands into one trip to reduce your weekly mileage.",
+            });
+          }
+
+          // Home energy tips
+          if (parseFloat(results.home) > 3) {
+            tips.push({
+              category: "Home Energy",
+              text: "Switch to LED bulbs, unplug electronics when not in use, and consider installing a programmable thermostat.",
+            });
+          }
+
+          if (formData.electricity > 100) {
+            tips.push({
+              category: "Home Energy",
+              text: "Consider renewable energy options for your home, such as solar panels or choosing a green energy provider.",
+            });
+          }
+
+          // Diet tips
+          if (formData.diet === "meat-heavy") {
+            tips.push({
+              category: "Diet",
+              text: "Reducing meat consumption, especially beef, can significantly lower your carbon footprint. Try meatless Mondays!",
+            });
+          }
+
+          if (formData.foodWaste === "high") {
+            tips.push({
+              category: "Diet",
+              text: "Plan meals, use leftovers creatively, and compost food scraps to reduce waste.",
+            });
+          }
+
+          if (formData.shopping > 200) {
+            tips.push({
+              category: "Consumption",
+              text: "Buy less, choose durable goods, repair instead of replace, and support sustainable brands.",
+            });
+          }
+
+          // General tips
+          tips.push({
+            category: "General",
+            text: "Support reforestation projects or carbon offset programs to compensate for unavoidable emissions.",
+          });
+
+          tips.push({
+            category: "General",
+            text: "Educate others about climate change and encourage sustainable practices in your community.",
+          });
+
+          // Display tips
+          tips.forEach((tip) => {
+            const tipElement = document.createElement("div");
+            tipElement.className = "tip-item";
+            tipElement.innerHTML = `
+                        <div class="tip-category">${tip.category}</div>
+                        <div class="tip-text">${tip.text}</div>
+                    `;
+            tipsContainer.appendChild(tipElement);
+          });
+        }
+
+        // Populate review data
+        function populateReviewData() {
+          const reviewData = document.getElementById("review-data");
+          reviewData.innerHTML = `
+                    <div class="review-item">
+                        <strong>Transportation:</strong> ${
+                          document.getElementById("car-miles").value || 0
+                        } miles/week driving, 
+                        ${
+                          document.getElementById("public-transit").value || 0
+                        } miles/week public transit, 
+                        ${
+                          document.getElementById("flights").value || 0
+                        } flights/year
+                    </div>
+                    <div class="review-item">
+                        <strong>Home Energy:</strong> $${
+                          document.getElementById("electricity").value || 0
+                        }/month electricity, 
+                        $${
+                          document.getElementById("natural-gas").value || 0
+                        }/month natural gas, 
+                        ${
+                          document.getElementById("home-size").value || 0
+                        } sq ft home with 
+                        ${
+                          document.getElementById("occupants").value || 1
+                        } occupants
+                    </div>
+                    <div class="review-item">
+                        <strong>Diet & Consumption:</strong> ${document
+                          .getElementById("diet")
+                          .value.replace("-", " ")} diet, 
+                        ${
+                          document.getElementById("food-waste").value
+                        } food waste, 
+                        $${
+                          document.getElementById("shopping").value || 0
+                        }/month on shopping
+                    </div>
+                `;
+        }
+
+        // Populate review data when reaching step 4
+        nextButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            if (currentStep === 2) {
+              populateReviewData();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

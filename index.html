@@ -1,53 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
     <title>EcoLocator</title>
-    <!-- Link to External CSS File -->
-    <link href="styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Laila:wght@400&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header Section -->
-    <header class="header">
-        <p>ecolocator</p>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">EcoLocator</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="footprint.html">Carbon Footprint Calculator</a>
+        <a href="https://tanvilodhavia.wixsite.com/ecolens" target="_blank">Blog</a>
+        <a href="https://garbage-classifier-python.streamlit.app/" target="_blank">Waste Classifier</a>
+      </nav>
     </header>
-
-    <!-- Image Grid Section -->
-    <div class="image-grid-container">
-        <!-- Grid Item -->
-        <div class="image-item">
-            <img src="./images/image_1.png" alt="Recycling Image 1">
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-text" data-aos="fade-up">
+        <h1>Empowering Green Futures</h1>
+        <p>
+          Discover smarter, more sustainable ways to manage waste and protect
+          our planet.
+        </p>
+        <a href="#why-recycle" class="hero-button">Learn More</a>
+      </div>
+    </section>
+    <!-- Why Recycle -->
+    <section class="why-recycle" id="why-recycle">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Why Recycle?</h2>
+          <p>
+            Recycling is one of the most effective ways to reduce waste and
+            protect our environment. Here's why it matters:
+          </p>
         </div>
-        <div class="image-item">
-            <img src="./images/image_2.png" alt="Recycling Image 2">
+        <div class="recycle-grid">
+          <div class="recycle-item" data-aos="fade-right">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Natural Resources"
+              />
+            </div>
+            <h3>Protects Natural Resources</h3>
+            <p>
+              Recycling reduces the need for extracting, refining and processing
+              raw materials, which helps conserve natural resources and protects
+              ecosystems.
+            </p>
+          </div>
+          <div class="recycle-item" data-aos="fade-up">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Energy Saving"
+              />
+            </div>
+            <h3>Saves Energy</h3>
+            <p>
+              Manufacturing products from recycled materials typically requires
+              less energy than producing them from virgin materials.
+            </p>
+          </div>
+          <div class="recycle-item" data-aos="fade-left">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Climate Change"
+              />
+            </div>
+            <h3>Combats Climate Change</h3>
+            <p>
+              Recycling reduces greenhouse gas emissions by decreasing the need
+              for energy-intensive extraction and manufacturing processes.
+            </p>
+          </div>
         </div>
-        <div class="image-item">
-            <img src="./images/image_3.png" alt="Recycling Image 3">
+        <!-- <div class="stats-container" data-aos="zoom-in">
+          <div class="stat-item">
+            <div class="stat-number">75%</div>
+            <div class="stat-label">
+              Less energy used when recycling aluminum vs. producing new
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1 ton</div>
+            <div class="stat-label">
+              Of recycled paper saves 17 trees and 7,000 gallons of water
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">60%</div>
+            <div class="stat-label">Of landfill waste could be recycled</div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <section class="map-section" id="map">
+      <div class="container">
+        <div class="map-header" data-aos="fade-up">
+          <h2>Find Recycling Centers Near You</h2>
+          <p>
+            Locate the nearest recycling facilities in your area and contribute
+            to a greener planet
+          </p>
         </div>
-        <div class="image-item">
-            <img src="./images/image_4.png" alt="Recycling Image 4">
+        <div class="map-container" data-aos="zoom-in">
+          <div class="map-wrapper">
+            <iframe
+              src="https://www.google.com/maps/d/u/3/embed?mid=1ZNBjMBni52Mu2jEckFNbIRKV0S7j5VQ&ehbc=2E312F&noprof=1"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+          <div class="map-info">
+            <div class="info-card">
+              <h3>How to Use This Map</h3>
+              <ul>
+                <li>Zoom in to see recycling centers in your area</li>
+                <li>Click on markers for details about each location</li>
+                <li>Filter by type of materials accepted</li>
+                <li>Get directions to your chosen facility</li>
+              </ul>
+              <a href="#" class="hero-button">Add Your Location</a>
+            </div>
+          </div>
         </div>
-    </div>
-
-    <!-- Content Section -->
-    <div class="content">
-        <h2>Why recycle?</h2>
-        <p>Recycling is a simple yet powerful way to reduce our environmental impact and conserve valuable resources. By recycling, we help reduce the amount of waste in landfills, minimizing pollution that contributes to climate change. Recycling conserves natural resources, as materials like paper, plastic, metal, and glass can be reused to create new products, reducing the need for raw material extraction. This not only saves energy but also decreases deforestation, mining, and water use, essential for maintaining biodiversity. Recycling also reduces the carbon footprint of manufacturing processes by using recycled materials instead of virgin ones, further combating climate change. Additionally, it supports the economy by creating jobs in recycling industries. By recycling, we send a strong message to future generations about the importance of environmental responsibility. Every small action counts, and by making recycling a habit, we can collectively make a significant difference. To make it easier for you, our website provides information about nearby recycling centers, so you can recycle conveniently and contribute to a greener world</p>
-    </div>
+      </div>
+    </section>
+    <section class="calculator-section" data-aos="fade-up">
+      <div class="container">
+        <div class="calculator-content">
+          <div class="calculator-text">
+            <h2>Calculate Your Carbon Footprint</h2>
+            <p>
+              Understanding your carbon footprint is the first step toward
+              reducing your environmental impact. Our calculator helps you
+              measure your personal carbon emissions and provides actionable
+              tips to reduce them.
+            </p>
+            <ul class="calculator-features">
+              <li>Quick and easy assessment</li>
+              <li>Personalized reduction tips</li>
+              <li>Track your progress over time</li>
+              <li>Learn about sustainable alternatives</li>
+            </ul>
+            <a href="footprint.html" class="hero-button"
+              >Calculate Now</a
+            >
+          </div>
+          <div class="calculator-image">
+            <img
+              src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Carbon Footprint"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
     
-
-    <!-- Map Section -->
-    <div class="map-section" id='map'>
-        <p><strong>Find recycling centers near you:</strong></p>
-        <iframe src="https://www.google.com/maps/d/u/3/embed?mid=1ZNBjMBni52Mu2jEckFNbIRKV0S7j5VQ&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>    </div>
+    <!-- New Blog Section -->
+    <section class="blog-section" data-aos="fade-up">
+      <div class="container">
+        <div class="blog-content">
+          <div class="blog-image">
+            <img
+              src="images/book.png"
+              alt="EcoLens Blog"
+            />
+          </div>
+          <div class="blog-text">
+            <h2>Explore EcoLens: Climate & Tech Book Summaries</h2>
+            <p>
+              Dive into our curated collection of book summaries that bridge the gap between 
+              climate science and technology innovation. EcoLens brings you key insights from 
+              thought leaders and researchers working toward a sustainable future.
+            </p>
+            <ul class="blog-features">
+              <li>Concise summaries of climate and technology books</li>
+              <li>Key takeaways from environmental thought leaders</li>
+              <li>Practical insights for sustainable living</li>
+              <li>Regular updates with new book reviews</li>
+            </ul>
+            <a href="https://tanvilodhavia.wixsite.com/ecolens" target="_blank" class="hero-button"
+              >Visit EcoLens Blog</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
     
-
-    <!-- Footer Section -->
-    <footer>
-        <p>"Recycling is a little act that makes a big difference—one small step for you, one giant leap for the planet!"</p>
+    <section class="waste-hero">
+      <div class="waste-hero-content" data-aos="fade-left">
+        <h1>AI Waste Classification</h1>
+        <p>
+          This machine learning project uses convolutional neural networks
+          (CNNs) and real-time image recognition to classify waste into
+          recyclable categories. It's a fusion of computer vision and
+          sustainability.
+        </p>
+        <a
+          href="https://garbage-classifier-python.streamlit.app/"
+          target="_blank"
+          class="hero-button"
+        >
+          Try It Live
+        </a>
+      </div>
+    </section>
+    <footer class="footer">
+      <p>&copy; 2025 EcoLocator. All rights reserved.</p>
     </footer>
-    
-</body>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 1000,
+      });
+    </script>
+  </body>
 </html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Partner with Us - EcoLocator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">EcoLocator</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="footprint.html">Carbon Footprint Calculator</a>
+        <a href="https://tanvilodhavia.wixsite.com/ecolens" target="_blank"
+          >Blog</a
+        >
+        <a
+          href="https://garbage-classifier-python.streamlit.app/"
+          target="_blank"
+          >Waste Classifier</a
+        >
+        <a href="partner.html" class="active">Partner with Us</a>
+      </nav>
+    </header>
+
+    <section class="partner-hero">
+      <div class="partner-hero-content" data-aos="fade-up">
+        <h1>Partner with EcoLocator</h1>
+        <p>
+          Join our network of environmental organizations and businesses
+          committed to creating a sustainable future.
+        </p>
+      </div>
+    </section>
+
+    <section class="partner-section">
+      <div class="container">
+        <div class="partner-content" data-aos="fade-up">
+          <div class="partner-form">
+            <h2>Become a Partner</h2>
+            <p>
+              Fill out the form below to express your interest in partnering
+              with EcoLocator.
+            </p>
+
+            <form id="partnerForm">
+              <div class="form-group">
+                <label for="organization">Organization Name</label>
+                <input
+                  type="text"
+                  id="organization"
+                  name="organization"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="contact">Contact Person</label>
+                <input type="text" id="contact" name="contact" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" />
+              </div>
+              <div class="form-group">
+                <label for="partnership-type">Partnership Type</label>
+                <select id="partnership-type" name="partnership-type" required>
+                  <option value="">Select Partnership Type</option>
+                  <option value="recycling-center">Recycling Center</option>
+                  <option value="waste-management">
+                    Waste Management Company
+                  </option>
+                  <option value="environmental-org">
+                    Environmental Organization
+                  </option>
+                  <option value="corporate">Corporate Sponsor</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Tell us about your organization</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="hero-button">
+                Submit Partnership Request
+              </button>
+            </form>
+          </div>
+          <div class="partner-info">
+            <h2>Partner With EcoLocator</h2>
+            <p style="margin-bottom: 20px;">
+              We're working to make recycling more accessible by mapping
+              verified recycling centers and sharing reliable information with
+              local communities. If you're an organization committed to
+              sustainability, we'd love to collaborate.
+            </p>
+
+            <div class="benefit-item">
+              <h3>Support Local Access</h3>
+              <p>
+                Help citizens easily locate recycling services in your area by
+                contributing to our growing database.
+              </p>
+            </div>
+
+            <div class="benefit-item">
+              <h3>Collaborate on Awareness</h3>
+              <p>
+                We welcome partnerships on events, drives, or workshops that
+                promote responsible waste practices.
+              </p>
+            </div>
+
+            <div class="benefit-item">
+              <h3>Share Knowledge</h3>
+              <p>
+                We're building a network of organizations working on
+                environmental action — and we’d love to share learnings,
+                resources, or toolkits to support your work as well.
+              </p>
+            </div>
+
+            <div class="benefit-item">
+              <h3>Flexible Partnerships</h3>
+              <p>
+                Whether you're a local NGO, school club, or business, we’re open
+                to co-creating simple, actionable solutions together.
+              </p>
+            </div>
+
+            <div class="partner-types">
+              <h3>We Work With</h3>
+              <ul>
+                <li>Recycling Centers</li>
+                <li>Waste Management Groups</li>
+                <li>Local NGOs and Civic Bodies</li>
+                <li>Sustainability Clubs and Schools</li>
+                <li>Small Businesses and Vendors</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 EcoLocator. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 1000,
+      });
+
+      // Form submission handler
+      document
+        .getElementById("partnerForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert(
+            "Thank you for your partnership request! We will contact you within 5 business days."
+          );
+          this.reset();
+        });
+    </script>
+  </body>
+</html>

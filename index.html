@@ -22,8 +22,15 @@
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="footprint.html">Carbon Footprint Calculator</a>
-        <a href="https://tanvilodhavia.wixsite.com/ecolens" target="_blank">Blog</a>
-        <a href="https://garbage-classifier-python.streamlit.app/" target="_blank">Waste Classifier</a>
+        <a href="https://tanvilodhavia.wixsite.com/ecolens" target="_blank"
+          >Blog</a
+        >
+        <a
+          href="https://garbage-classifier-python.streamlit.app/"
+          target="_blank"
+          >Waste Classifier</a
+        >
+        <a href="partner.html">Parner with us</a>
       </nav>
     </header>
     <section class="hero">
@@ -139,7 +146,49 @@
                 <li>Filter by type of materials accepted</li>
                 <li>Get directions to your chosen facility</li>
               </ul>
-              <a href="#" class="hero-button">Add Your Location</a>
+
+              <h3>Suggest a Recycling Center</h3>
+              <p>Know of a recycling center not on our map? Let us know!</p>
+              <form id="vendorForm">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="vendor-name"
+                    name="vendor-name"
+                    placeholder="Center Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="vendor-address"
+                    name="vendor-address"
+                    placeholder="Address"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <select
+                    id="vendor-materials"
+                    name="vendor-materials"
+                    required
+                  >
+                    <option value="">Materials Accepted</option>
+                    <option value="plastic">Plastic</option>
+                    <option value="paper">Paper</option>
+                    <option value="glass">Glass</option>
+                    <option value="metal">Metal</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="hazardous">Hazardous Waste</option>
+                    <option value="organic">Organic Waste</option>
+                    <option value="all">All Materials</option>
+                  </select>
+                </div>
+                <button type="submit" class="hero-button">
+                  Suggest Vendor
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -162,9 +211,7 @@
               <li>Track your progress over time</li>
               <li>Learn about sustainable alternatives</li>
             </ul>
-            <a href="footprint.html" class="hero-button"
-              >Calculate Now</a
-            >
+            <a href="footprint.html" class="hero-button">Calculate Now</a>
           </div>
           <div class="calculator-image">
             <img
@@ -175,23 +222,21 @@
         </div>
       </div>
     </section>
-    
+
     <!-- New Blog Section -->
     <section class="blog-section" data-aos="fade-up">
       <div class="container">
         <div class="blog-content">
           <div class="blog-image">
-            <img
-              src="images/book.png"
-              alt="EcoLens Blog"
-            />
+            <img src="images/book.png" alt="EcoLens Blog" />
           </div>
           <div class="blog-text">
             <h2>Explore EcoLens: Climate & Tech Book Summaries</h2>
             <p>
-              Dive into our curated collection of book summaries that bridge the gap between 
-              climate science and technology innovation. EcoLens brings you key insights from 
-              thought leaders and researchers working toward a sustainable future.
+              Dive into our curated collection of book summaries that bridge the
+              gap between climate science and technology innovation. EcoLens
+              brings you key insights from thought leaders and researchers
+              working toward a sustainable future.
             </p>
             <ul class="blog-features">
               <li>Concise summaries of climate and technology books</li>
@@ -199,14 +244,17 @@
               <li>Practical insights for sustainable living</li>
               <li>Regular updates with new book reviews</li>
             </ul>
-            <a href="https://tanvilodhavia.wixsite.com/ecolens" target="_blank" class="hero-button"
+            <a
+              href="https://tanvilodhavia.wixsite.com/ecolens"
+              target="_blank"
+              class="hero-button"
               >Visit EcoLens Blog</a
             >
           </div>
         </div>
       </div>
     </section>
-    
+
     <section class="waste-hero">
       <div class="waste-hero-content" data-aos="fade-left">
         <h1>AI Waste Classification</h1>
@@ -225,6 +273,84 @@
         </a>
       </div>
     </section>
+
+    <!-- About Us Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-content" data-aos="fade-up">
+          <div class="about-text">
+            <h2>About EcoLocator</h2>
+            <p>
+              EcoLocator is a student-led initiative that empowers communities
+              to make environmentally conscious decisions with ease. Designed as
+              a smart, interactive platform, EcoLocator helps users locate the
+              nearest recycling centers, understand waste categories, and learn
+              how to dispose of items responsibly.
+            </p>
+            <p>
+              In a world facing mouting environmental challenges, EcoLocator
+              leverages technology to close the gap between intent and action.
+              Whether you're trying to recycle an old phone or understand the
+              difference between biodegradable and e-waste, EcoLocator provides
+              accurate, real-time guidance.
+            </p>
+            <p>
+              But EcoLocator goes beyond static maps. It integrates features
+              like:
+            </p>
+            <ul>
+              <li>
+                AI-powered waste classification to help identify materials using
+                images,
+              </li>
+              <li>
+                A carbon footprint calculator to raise awareness about
+                consumption habits
+              </li>
+            </ul>
+            <!-- <div class="team-grid">
+              <div class="team-member">
+                <div class="member-photo">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/44.jpg"
+                    alt="Team Member"
+                  />
+                </div>
+                <h3>Dr. Sarah Johnson</h3>
+                <p>Environmental Scientist</p>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                    alt="Team Member"
+                  />
+                </div>
+                <h3>Michael Chen</h3>
+                <p>Technology Lead</p>
+              </div>
+              <div class="team-member">
+                <div class="member-photo">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                    alt="Team Member"
+                  />
+                </div>
+                <h3>Emma Rodriguez</h3>
+                <p>Community Outreach</p>
+              </div>
+            </div> -->
+          </div>
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="About EcoLocator"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer">
       <p>&copy; 2025 EcoLocator. All rights reserved.</p>
     </footer>
@@ -235,6 +361,22 @@
         once: true,
         duration: 1000,
       });
+    </script>
+    <script>
+      // Vendor form submission handler
+      document
+        .getElementById("vendorForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = document.getElementById("vendor-name").value;
+          const address = document.getElementById("vendor-address").value;
+          const materials = document.getElementById("vendor-materials").value;
+
+          alert(
+            `Thank you for suggesting ${name}! We'll review this location and add it to our map if it meets our criteria.`
+          );
+          this.reset();
+        });
     </script>
   </body>
 </html>
